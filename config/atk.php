@@ -26,9 +26,9 @@ return [
     'language' => 'it',
 
     'modules' => [
-        App\Modules\Auth\Module::class,
-        App\Modules\App\Module::class,
-    ],
+	App\Modules\Setup\Module::class,
+	App\Modules\Security\Module::class,
+],
 
     'language_basedir' => $_baseDir.'languages/',
     'debug' => $_parameters['atk']['debug'],
@@ -48,16 +48,16 @@ return [
     'auth_usecryptedpassword' => true,
     'auth_userpk' => 'id',
     'auth_userfk' => 'user_id',
-    'auth_usernode' => 'auth.users',
-    'auth_usertable' => 'auth_users',
+    'auth_usernode' => 'Security.Users',
+    'auth_usertable' => 'Security_Users',
     'auth_userfield' => 'username',
     'auth_passwordfield' => 'passwd',
     'auth_emailfield' => 'email',
-    'auth_accountdisablefield' => 'isDisabled',
-    'auth_administratorfield' => 'isAdmin',
-    'auth_leveltable' => 'auth_users_groups',
+    'auth_accountdisablefield' => 'disabled',
+    'auth_administratorfield' => 'is_admin',
+    'auth_leveltable' => 'Security_Users_Groups',
     'auth_levelfield' => 'group_id',
-    'auth_accesstable' => 'auth_accessrights',
+    'auth_accesstable' => 'security_accessrights',
 
     'auth_enable_rememberme' => true,
     'auth_rememberme_dbtable' => 'auth_rememberme',
@@ -65,4 +65,5 @@ return [
     'auth_enable_u2f' => true,
     'auth_u2f_dbtable' => 'auth_u2f',
     'auth_u2f_enabledfield' => 'isU2FEnabled',
+'setup_allowed_ips' => '127.0.0.1:127.0.0.0'
 ];

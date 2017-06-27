@@ -1,0 +1,59 @@
+########################################################################################################################
+# DefFile 
+# ------------------------------------------------------------------------
+#
+# Comments are prefixed with #  
+# *name  (If starts with an asterisk, the it is a required value)
+# 
+# Module Keyword: Define a new Module, syntax:
+# 
+#   module:*module_name:name_for_menu
+#
+# Node Keyword: Define a new node (A new GUI for DB Table CRUD), syntax:
+#
+#   node:*node_name:node_description:node_actions_separated_by_commas:node_flags:is_searchable_true_false:is_installabe_true_false:node_type_if_not_atbuildernode:node_not_in_menu
+#
+# without Module or Node, it is assumed to be a Node Attribute, Attributes has the following syntax:
+# 
+# *attribute_name:attribute_label:attribute_type:attribute_flags:attribute_tab
+#
+#  Type and flags are deduced automatically of name, if not specified.
+#  Attribute type rules:
+#  if name contains "date/hour/minute/second" are translated to date/time attributes
+#  if name contains "number" it is translated to a number attribute
+#  if name contains "ammount, price, precio, monto" it is translated to a currency attribute
+#  if name contains "name/nombre" it is obligatory and searchable
+#  if name contains "es/is/has/tiene" it is a bool attribute;
+#  if name begins with hasmany then the format is hasmany_MODULE__NODE and it indicates a father/child relation
+#  if name is MODULE__NODE_id then it is a 1 to n relation to MODULE,NODE
+#
+########################################################################################################################
+
+appnme:atk-testlab
+db:atk-testlab:atk-testlab:atk-testlab
+
+	
+module:Security
+	node:Users
+		username
+		passwd
+		firstname
+		lastname
+		email
+                is_admin::BoolAttribute
+		disabled::BoolAttribute
+		
+	node:Groups
+		name
+		description
+		users::ShuttleRelation:AF_HIDE_LIST|AF_HIDE_ADD,'Security.Users_Groups', 'Security.Users', 'group_id', 'user_id'
+		accessrights::ProfileAttribute:AF_BLANKLABEL|AF_HIDE_ADD
+		
+	node:Users_Groups:::::::true
+		user_id
+		group_id
+
+	node:AccessRights:::::::true
+		\node
+		action
+		group_id
