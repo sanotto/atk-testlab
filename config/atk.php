@@ -28,6 +28,7 @@ return [
     'modules' => [
 	App\Modules\Setup\Module::class,
 	App\Modules\Security\Module::class,
+	AtkTools\Module::class,
 ],
 
     'language_basedir' => $_baseDir.'languages/',

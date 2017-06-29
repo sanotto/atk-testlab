@@ -29,10 +29,10 @@
 #
 ########################################################################################################################
 
-appnme:atk-testlab
-db:atk-testlab:atk-testlab:atk-testlab
+appnme:atktestlab
+db:atktestlab:root:root
 
-	
+
 module:Security
 	node:Users
 		username
@@ -42,13 +42,13 @@ module:Security
 		email
                 is_admin::BoolAttribute
 		disabled::BoolAttribute
-		
+
 	node:Groups
 		name
 		description
 		users::ShuttleRelation:AF_HIDE_LIST|AF_HIDE_ADD,'Security.Users_Groups', 'Security.Users', 'group_id', 'user_id'
 		accessrights::ProfileAttribute:AF_BLANKLABEL|AF_HIDE_ADD
-		
+
 	node:Users_Groups:::::::true
 		user_id
 		group_id
