@@ -8,6 +8,7 @@ return [
 		'email' =>'', 
 		'is_admin' =>'', 
 		'disabled' =>'', 
+		'periodo' =>'', 
 		'name' =>'', 
 		'description' =>'', 
 		'users' =>'', 

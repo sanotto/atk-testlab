@@ -42,6 +42,7 @@ module:Security
 		email
                 is_admin::BoolAttribute
 		disabled::BoolAttribute
+		periodo::YearMonthAttribute
 
 	node:Groups
 		name

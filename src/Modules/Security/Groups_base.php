@@ -15,7 +15,7 @@ class Groups_base extends AtkBuilderNode
 	function __construct($nodeUri, $flags=null)
 	{
 		$this->table_name="security_groups";
-		parent::__construct($nodeUri, $flags | NF_ADD_LINK);
+		parent::__construct($nodeUri, $flags | null|Node::NF_ADD_LINK);
 		
 		$this->setTable($this->table_name);
 		$this->addFlag(Node::NF_ADD_LINK);

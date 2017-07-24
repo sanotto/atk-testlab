@@ -5,6 +5,6 @@
 	$setup->installNode("Security.Users_Groups");
 	$setup->installNode("Security.AccessRights");
 
-	$setup->setVersion(1);
+	$setup->setVersion(3);
   include("after_install.inc");
 ?>

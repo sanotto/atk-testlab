@@ -7,4 +7,7 @@
 
 return [
     'some-variable' => 'This is a test config variable, you can safely remove me',
+	'modules' => [
+		sanotto\atkModGlobalSearch\Module:class,
+	],
 ];

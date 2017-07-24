@@ -28,9 +28,9 @@ return [
     'modules' => [
 	App\Modules\Setup\Module::class,
 	App\Modules\Security\Module::class,
-	AtkTools\Module::class,
+////end-of-atk-builder-modules-list
+    sanotto\atkGlobalSearch\Module::class
 ],
-
     'language_basedir' => $_baseDir.'languages/',
     'debug' => $_parameters['atk']['debug'],
     'meta_caching' => $_parameters['atk']['meta_caching'],
@@ -66,5 +66,5 @@ return [
     'auth_enable_u2f' => true,
     'auth_u2f_dbtable' => 'auth_u2f',
     'auth_u2f_enabledfield' => 'isU2FEnabled',
-'setup_allowed_ips' => '127.0.0.1:127.0.0.0'
+	'setup_allowed_ips' => '127.0.0.1:127.0.0.0:10.10.1.41:10.10.1.240'
 ];

@@ -11,8 +11,9 @@
   "require": {
     "php": ">=5.5.9",
     "sintattica/atk": "9.0.x-dev",
-    "sanotto/atk-builder": "^2.1",
-    "sanotto/atk-tools": "@dev"
+    "sanotto/atk-builder": "^2.1.1",
+    "sanotto/atk-mod-global-search": "@dev",
+    "sanotto/atk-attribute-yearmonth": "@dev"
   },
   "autoload": {
     "psr-4": {
